@@ -1,0 +1,216 @@
+<section class="home-section">
+  <img ngSrc="assets/common-bg.svg" alt="background-image" fill priority>
+  <div class="home-hero">
+    <div class="home-hero-socials">
+      <a href="https://in.linkedin.com/in/suvojit-modak-928b69147" aria-label="linkedin" target="_blank"><i
+          class="fa-brands fa-linkedin"></i></a>
+      <a href="https://x.com" aria-label="twitter" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://github.com" aria-label="github" target="_blank"><i class="fa-brands fa-github"></i></a>
+    </div>
+    <h1>Hey, I'm Suvojit Modak</h1>
+    <p class="hero-text">
+      A Result-Oriented Web Developer building and managing Websites and Web
+      Applications that leads to the success of the overall product
+    </p>
+    <a href="www.google.com" target="_blank" class="btn btn-primary">Download Resume</a>
+  </div>
+</section>
+
+
+<!-- <hr style="color: red" /> -->
+
+<section class="about-section">
+  <div class="about-data">
+    <h2>About Me</h2>
+    <p>
+      Here you will find more information about me, what I do, and my current
+      skills mostly in terms of programming and technology
+    </p>
+  </div>
+
+  <div class="container">
+    <div class="col-12 mt-5">
+      <div class="row">
+        <div class="col-6">
+          <h3>Get to know me!</h3>
+          <p>
+            I'm a Frontend Focused Web Developer building and managing the
+            Front-end of Websites and Web Applications that leads to the success
+            of the overall product. Check out some of my work in the Projects
+            section.
+          </p>
+          <p>
+            I'm open to Job opportunities where I can contribute, learn and
+            grow. If you have a good opportunity that matches my skills and
+            experience then don't hesitate to contact me.
+          </p>
+          <button class="btn btn-primary" routerLink="contact">Contact</button>
+        </div>
+
+        <div class="col-6">
+          <h3>My Skills</h3>
+          <div class="container">
+            <div class="col">
+              <button class="btn btn-secondary m-2">HTML</button>
+              <button class="btn btn-secondary m-2">CSS</button>
+              <button class="btn btn-secondary m-2">JavaScript</button>
+              <button class="btn btn-secondary m-2">Angular</button>
+            </div>
+            <div class="col">
+              <button class="btn btn-secondary m-2">SASS</button>
+              <button class="btn btn-secondary m-2">GIT</button>
+              <button class="btn btn-secondary m-2">Github</button>
+              <button class="btn btn-secondary m-2">Responsive Design</button>
+            </div>
+            <div class="col">
+              <button class="btn btn-secondary m-2">SEO</button>
+              <button class="btn btn-secondary m-2">Terminal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <hr style="color: red" /> -->
+
+<section class="project-section">
+  <div class="project-data">
+    <h2>Projects</h2>
+    <p>
+      Here you will find some of the personal and clients projects that I
+      created with each project containing its own case study
+    </p>
+  </div>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <h2>Project 1</h2>
+        <p>Some Paragraph</p>
+        <button class="btn btn-primary">Click Here</button>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img ngSrc="assets/project-mockup.svg" width="300" height="180" alt="project-1" priority>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-6">
+        <h2>Project 2</h2>
+        <p>Some Paragraph</p>
+        <button class="btn btn-primary">Click Here</button>
+      </div>
+      <div class="col-md-5">
+        <img ngSrc="assets/project-mockup.svg" width="300" height="180" alt="project-2" priority>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <hr style="color: red" /> -->
+
+<section class="contact-section">
+  <img ngSrc="assets/common-bg.svg" alt="background-image" fill priority>
+  <div class="contact-data">
+    <h2>Contact</h2>
+    <p>
+      Feel free to Contact me by submitting the form below and I will get back
+      to you as soon as possible
+    </p>
+  </div>
+
+  <div class="container mt-5">
+    <div class="contact-form">
+      <form [formGroup]="contactForm">
+        <div class="form-group">
+          <label for="name" class="required-field">Name</label>
+          <input type="text" id="name" formControlName="name" placeholder="Please enter name" />
+          <div class="errorMessage">
+            <p *ngIf="submitted && contactForm.get('name')?.hasError('required')">
+              Please enter name
+            </p>
+            <p *ngIf="submitted && contactForm.get('name')?.hasError('pattern')">
+              Name can only contain alphabetic characters and spaces
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email" class="required-field">Email</label>
+          <input type="email" id="email" formControlName="email" placeholder="Please enter email" />
+          <div class="errorMessage">
+            <p *ngIf="
+                submitted && contactForm.get('email')?.hasError('required')
+              ">
+              Please enter email
+            </p>
+            <p *ngIf="submitted && contactForm.get('email')?.hasError('email')">
+              Please enter a valid email address (e.g., abc@example.com)
+            </p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="message" class="required-field">Message</label>
+          <textarea id="message" formControlName="message" placeholder="Please enter message"></textarea>
+          <div class="errorMessage">
+            <p *ngIf="
+                submitted && contactForm.get('message')?.hasError('required')
+              ">
+              Please enter message
+            </p>
+          </div>
+        </div>
+        <!-- <div class="form-group">
+            <button type="submit" class="btn btn-primary" (click)="clickSubmit()" [disabled]="contactForm.pristine">
+              Send Message
+            </button>
+          </div> -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" (click)="clickSubmit()"
+            [disabled]="contactForm.pristine || isSubmitting">
+            <ng-container *ngIf="!isSubmitting">Send Message</ng-container>
+            <ng-container *ngIf="isSubmitting">Submitting...</ng-container>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- <hr style="color: red" /> -->
+
+<section class="footer-section">
+  <footer>
+    <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-6">
+          <h1>Suvojit Modak</h1>
+          <p>
+            A Frontend focused Web Developer building the Frontend of Websites
+            and Web Applications that leads to the success of the overall
+            product
+          </p>
+        </div>
+        <div class="col-lg-6 social-container">
+          <h1>Social</h1>
+          <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" aria-label="facebook"><i
+                class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com" target="_blank" aria-label="twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://in.linkedin.com/in/suvojit-modak-928b69147" target="_blank" aria-label="linkedin"><i
+                class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com" target="_blank" aria-label="github"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <p class="text-center">
+      © Copyright {{ currentYear }}. Made by Suvojit Modak
+      <i class="fa-regular fa-heart"></i>
+    </p>
+  </footer>
+</section>
+
+<button id="scrollTopBtn" class="scroll-to-top" *ngIf="showScrollTop" (click)="scrollToTop()">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
